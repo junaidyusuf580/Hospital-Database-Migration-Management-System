@@ -1,88 +1,92 @@
-# 📦 Inventory & Supply Chain Management Dashboard
+# Inventory & Supply Chain Management Dashboard
 
 > A full-stack, Python-powered web application built with **Streamlit** and **MySQL** that enables non-technical users to manage inventory, track stock, and automate supply chain operations — all without writing a single SQL query.
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
-- [Objectives](#-objectives)
-- [Live Demo Preview](#-live-demo-preview)
-- [Tech Stack](#-tech-stack)
+- [Project Objectives](#-project-objectives)
+- [System Architecture](#-system-architecture)
 - [Project Architecture](#-project-architecture)
 - [Database Schema](#-database-schema)
 - [Key Features](#-key-features)
 - [Setup & Installation](#-setup--installation)
 - [Configuration](#-configuration)
 - [Usage Guide](#-usage-guide)
-- [File Structure](#-file-structure)
+- [Project Structure](#-Project-structure)
 - [SQL Objects Reference](#-sql-objects-reference)
 - [Skills Learned](#-skills-learned)
-- [Known Issues & Improvements](#-known-issues--improvements)
+- [What Makes This Project Advanced](#-what-makes-this-project-advanced)
+- [Suggested Future Improvements](#-Suggested-Future-Improvements-)
 - [Author](#-author)
 
 ---
 
-## 🧩 Project Overview
+## Project Overview
 
-This project demonstrates the integration of a **relational MySQL database** with a **Python Streamlit frontend** to deliver a real-world inventory management system. Users can monitor key business metrics, add products, track inventory history, place reorders, and mark shipments as received — all through an intuitive point-and-click interface.
+**This project focuses on building an end-to-end Inventory Management Dashboard using:**
 
-The system is modeled on how businesses in retail, warehousing, and e-commerce manage their stock and supplier relationships. It bridges the gap between raw database operations and accessible, user-friendly tooling.
+- MySQL as the backend database
+- Python as the business logic layer
+- Streamlit as the frontend web interface
+
+**The application allows users to:**
+
+- View inventory insights
+- Add new products
+- Track inventory history
+- Manage reorder operations
+- Monitor supplier information
+- Display business KPIs in real time
+
+The project is designed especially for **non-technical users**, enabling them to interact with the database using a clean graphical interface instead of SQL queries.
 
 ---
 
-## 🎯 Objectives
+## Project Objectives
 
-- Design and implement a normalized relational database for inventory and supply chain data.
-- Build stored procedures and views to encapsulate complex business logic at the database layer.
-- Develop a clean, interactive Streamlit frontend that connects to the database in real time.
-- Enable non-technical stakeholders to perform critical operational tasks without SQL knowledge.
-- Demonstrate a multi-layered, production-style application architecture.
+- Build an inventory management system
+- Connect MySQL database with Python applications
+- Create interactive dashboards using Streamlit
+- Implement business logic using SQL procedures and functions
+- Automate inventory and reorder workflows
+- Allow non-technical users to manage operational data easily
+- Demonstrate full-stack data application development
 
 ---
 
-## 🛠 Tech Stack
+## System Architecture
 
 | Layer | Technology |
 |---|---|
 | **Frontend** | Python · Streamlit · Pandas |
-| **Backend / Database** | MySQL 8.x |
+| **Backend / Database** | MySQL |
 | **DB Connector** | `mysql-connector-python` |
 | **Database Objects** | Tables · Views · Stored Procedures |
-| **Language** | Python 3.x · SQL |
+| **Tools** | Python . SQL |
 | **IDE / Tools** | VS Code · MySQL Workbench |
 
 ---
 
-## 🏗 Project Architecture
+## Project Architecture
 
-```
-┌─────────────────────────────────────────────────┐
-│              Streamlit Web Interface             │
-│  ┌─────────────────┐   ┌──────────────────────┐ │
-│  │  Basic Info Tab  │   │  Operations Task Tab  │ │
-│  │  - KPI Metrics   │   │  - Add Product        │ │
-│  │  - Supplier List │   │  - Product History    │ │
-│  │  - Reorder Alert │   │  - Place Reorder      │ │
-│  └────────┬─────────┘   │  - Receive Order      │ │
-│           │             └──────────┬────────────┘ │
-└───────────┼──────────────────────┼───────────────┘
-            │    functionUI.py      │
-            │  (DB abstraction layer│
-            ▼                       ▼
-┌─────────────────────────────────────────────────┐
-│                  MySQL Database                  │
-│  Tables: products, suppliers, shipments,         │
-│          stock_entries, reorders                 │
-│  Views:  Inventory_history                       │
-│  Procs:  AddNewProduct_id, Order_received        │
-└─────────────────────────────────────────────────┘
-```
+| Layer | Component | Features / Description |
+|---|---|---|
+| Frontend | Streamlit Web Interface | User interface for inventory management system |
+| Frontend Module | Basic Info Tab | KPI Metrics, Supplier List, Reorder Alert |
+| Frontend Module | Operations Task Tab | Add Product, Product History, Place Reorder, Receive Order |
+| Backend Layer | `functionUI.py` | Database abstraction layer connecting Streamlit and MySQL |
+| Database | MySQL Database | Stores and manages inventory data |
+| Database Tables | Tables | `products`, `suppliers`, `shipments`, `stock_entries`, `reorders` |
+| Database Views | Views | `Inventory_history` |
+| Database Procedures | Stored Procedures | `Add New-Product_id`, `Order_received` |
+
 
 ---
 
-## 🗄 Database Schema
+## Database Schema
 
 The database (`userinterface`) is built around five core tables:
 
@@ -91,32 +95,32 @@ The database (`userinterface`) is built around five core tables:
 | `products` | Stores product details: name, category, price, stock, reorder level, supplier |
 | `suppliers` | Supplier contact information |
 | `shipments` | Records of goods received from suppliers |
-| `stock_entries` | Logs every stock movement — sales, restocks |
-| `reorders` | Tracks reorder requests and their status (Ordered → Received) |
+| `stock_entries` | Logs every stock movement — sales, restocks, entry-date |
+| `reorders` | Tracks reorder requests and their status (Ordered →Pending →Received) |
 
 **Views:**
 
 | View | Description |
 |---|---|
-| `Inventory_history` | Unified view joining shipments and stock entries per product for a full audit trail |
+| `Inventory_history` | Created a unified inventory view by joining shipments and stock_entries tables to provide complete product movement history and audit tracking |
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 📊 Basic Information Dashboard
+### Basic Information Dashboard(`streamlit`)
 - **6 real-time KPI metrics** displayed in card format:
   - Total Suppliers
   - Total Products
   - Total Categories
-  - Total Sale Value (last 3 months)
+  - Total Sale Value (last one year)
   - Total Restock Value (last 3 months)
   - Products below reorder level with no pending order
 - **Supplier details** table
 - **Product–Supplier mapping** table
 - **Reorder alert list** — products at or below their reorder threshold
 
-### ⚙️ Operational Tasks
+### Operational Tasks(`streamlit`)
 - **Add New Product** — form-driven entry that inserts records across `products`, `shipments`, and `stock_entries` atomically via a stored procedure
 - **Product History** — per-product audit trail pulled from the `Inventory_history` view
 - **Place Reorder** — one-click reorder submission with quantity input
@@ -124,12 +128,12 @@ The database (`userinterface`) is built around five core tables:
 
 ---
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- MySQL Server 8.x
+- Python 
+- MySQL Server 
 - pip
 
 ### Step 1 — Clone the Repository
@@ -147,15 +151,13 @@ pip install streamlit mysql-connector-python pandas
 
 ### Step 3 — Set Up the MySQL Database
 
-1. Open **MySQL Workbench** or your preferred MySQL client.
-2. Run the full script in `Webapp_Mysql_query.sql`:
+1. Open **MySQL Workbench** 
+2. Run the full script in `Webapp_Mysql_query.sql`(MySql file):
 
 ```sql
 -- This creates the database, tables, views, and stored procedures
 source Webapp_Mysql_query.sql;
 ```
-
-> ⚠️ Make sure your MySQL server is running before executing the script.
 
 ### Step 4 — Configure Database Credentials
 
@@ -171,8 +173,6 @@ def connect_to_df():
     )
 ```
 
-> 🔒 **Security Note:** Do not commit credentials to version control. Use environment variables or a `.env` file in production. See [Configuration](#-configuration) below.
-
 ### Step 5 — Run the Application
 
 ```bash
@@ -183,60 +183,32 @@ The app will open in your browser at `http://localhost:8501`.
 
 ---
 
-## ⚙️ Configuration
-
-For a more secure setup, use environment variables to manage your database credentials:
-
-```python
-import os
-
-def connect_to_df():
-    return mysql.connector.connect(
-        host=os.getenv("DB_HOST", "localhost"),
-        user=os.getenv("DB_USER", "root"),
-        password=os.getenv("DB_PASSWORD", ""),
-        database=os.getenv("DB_NAME", "userinterface")
-    )
-```
-
-Then set them in your terminal before running:
-
-```bash
-export DB_HOST=localhost
-export DB_USER=root
-export DB_PASSWORD=your_password
-export DB_NAME=userinterface
-streamlit run App_file.py
-```
-
----
-
-## 📖 Usage Guide
+## Usage Guide(`streamlit`)
 
 | Sidebar Option | Available Task | Description |
 |---|---|---|
-| Basic Information | — | View KPI metrics, supplier info, product–supplier links, and reorder alerts |
-| Operation Task | Add New Product | Add a product with name, category, price, stock, reorder level, and supplier |
+| `Basic Information` | KPI | View KPI metrics, supplier info, product–supplier links, and reorder alerts |
+| `Operation Task` | Add New Product | Add a product with name, category, price, stock, reorder level, and supplier |
 | Operation Task | Product History | Select any product to view its full shipment and stock-movement history |
 | Operation Task | Place Reorder | Select a product and enter quantity to submit a reorder request |
 | Operation Task | Received Reorder | Select a pending reorder to mark it received and auto-update stock |
 
 ---
 
-## 📁 File Structure
+## Project Structure
 
-```
-inventory-dashboard/
+project-folder/
 │
-├── App_file.py              # Main Streamlit application — UI logic & routing
-├── functionUI.py            # Database abstraction layer — all query functions
-├── Webapp_Mysql_query.sql   # Full SQL setup: tables, views, stored procedures
-└── README.md                # Project documentation
-```
+├── App.file.py                  # Streamlit frontend application
+├── functionUI.py                # Database utility functions
+├── Webapp Mysql query.sql       # SQL database scripts
+├── Interactive_Dashboard.ipynb  # Analysis notebook
+├── requirements.txt
+└── README.md
 
 ---
 
-## 🗂 SQL Objects Reference
+## SQL Objects Reference
 
 ### Stored Procedures
 
@@ -255,13 +227,13 @@ inventory-dashboard/
 
 | Metric | SQL Approach |
 |---|---|
-| Sales value (last 3 months) | `SUM(change_quantity * price)` on `stock_entries` filtered by `change_type = 'Sale'` |
+| Sales value (last one year) | `SUM(change_quantity * price)` on `stock_entries` filtered by `change_type = 'Sale'` |
 | Products needing reorder | `stock_quantity <= reorder_level` with no `Pending` entry in `reorders` |
 | Product–Supplier mapping | `JOIN` between `products` and `suppliers` |
 
 ---
 
-## 📚 Skills Learned
+## Skills Learned
 
 **Database Design & SQL**
 - Designing a normalized relational schema across 5 tables
@@ -277,37 +249,61 @@ inventory-dashboard/
 - Handling exceptions gracefully and displaying user-friendly error messages
 - Displaying query results as interactive Pandas DataFrames
 
-**Systems Thinking**
-- Modeling real-world business workflows as database transactions
-- Building tools accessible to non-technical end users
-- Understanding the role of backend constraints (procedures, transactions) in ensuring data consistency
+**Data Analytics Skills**
+- KPI Reporting
+- Operational Dashboarding
+- Business Metrics Analysis
+
+**Streamlit Skills**
+- Interactive UI Development
+- Forms and Inputs
+- Dynamic Data Display
+- Dashboard Design
+
+## Learning Outcomes
+
+By completing this project, you will understand:
+
+- How Python connects with MySQL
+- How Streamlit builds interactive dashboards
+- How SQL procedures automate workflows
+- How inventory systems operate in businesses
+- How to build data-driven business applications
 
 ---
 
-## 🐛 Known Issues & Improvements
+## What Makes This Project Advanced
 
-| Issue | Status | Suggested Fix |
-|---|---|---|
-| DB credentials hardcoded in `functionUI.py` | Open | Use `os.getenv()` or `python-dotenv` |
-| `get_pending_reorder` returns `None` (missing `return` statement) | Bug | Add `return cursor.fetchall()` |
-| `place_reorder` sets status as `"ordered"` but procedure checks `"Pending"` | Bug | Standardize to `"Pending"` in both places |
-| No authentication or user roles | Open | Add Streamlit session state login |
-| DB connection not closed after use | Open | Use `try/finally` or context manager |
-| No pagination for large DataFrames | Open | Add `st.dataframe` with row limit |
+* Combines frontend + backend + database systems
+* Uses real business workflows
+* Implements stored procedures and SQL logic
+* Demonstrates full-stack data application development
+* Supports non-technical business users
+* Simulates enterprise inventory management systems
 
 ---
 
-## 👤 Author
+## Suggested Future Improvements
 
-**Muhammad Junaid**
+- User authentication system
+- Role-based access control
+- Email alerts for low stock
+- Export reports to Excel/PDF
+- Real-time analytics charts
+- Cloud deployment (AWS/Azure)
+- API integration
+
+---
+
+## Author
+
+**Mohd Junaid**
 Aspiring Data Analyst | Python · SQL · Streamlit
 
----
-
-## 📄 License
-
-This project is intended for educational and portfolio purposes.
-
----
-
 > _"The goal was to build something that feels like enterprise software but is accessible enough for anyone to use — that's what this project delivers."_
+
+
+---
+
+
+
