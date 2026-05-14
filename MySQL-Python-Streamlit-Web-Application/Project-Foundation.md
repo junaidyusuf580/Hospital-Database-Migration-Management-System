@@ -3,6 +3,7 @@
 
 ## Project Structure
 
+``` bash
 project-folder/
 │
 ├── App.file.py                  # Streamlit frontend application
@@ -11,6 +12,7 @@ project-folder/
 ├── Interactive_Dashboard.ipynb  # Analysis notebook
 ├── requirements.txt
 └── README.md
+```
 
 ## System Architecture
 

@@ -11,16 +11,15 @@
 - [Technical Skills](#technical-skills)
 - [System Architecture](#system-architecture)
 - [Project Architecture](#project-architecture)
-- [Project Structure](#Project-structure)
+- [Project Structure](#project-structure)
 - [Database Schema](#database-schema)
 - [Key Features](#key-features)
-- [Setup & Installation](#setup-installation)  
-- [Configuration](#configuration)
+- [Setup & Installation](#setup--installation)  
 - [Usage Guide](#usage-guide)
 - [SQL Objects Reference](#sql-objects-reference)
 - [Skills Learned](#skills-learned)
 - [What Makes This Project Advanced](#what-makes-this-project-advanced)
-- [Suggested Future Improvements](#Suggested-Future-Improvements-)
+- [Suggested Future Improvements](#suggested-future-improvements-)
 - [Author](#author)
 
 ---
@@ -210,8 +209,9 @@ The app will open in your browser at `http://localhost:8501`.
 
 ---
 
-## Usage Guide(`streamlit`)
+## Usage Guide
 
+### Streamlit Webpage Overview
 | Sidebar Option | Available Task | Description |
 |---|---|---|
 | `Basic Information` | KPI | View KPI metrics, supplier info, product–supplier links, and reorder alerts |
