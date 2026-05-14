@@ -4,7 +4,7 @@ def connect_to_df():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="#Junaid@4712",
+        password="#Junaid@xxxx",
         database="userinterface")
 
 

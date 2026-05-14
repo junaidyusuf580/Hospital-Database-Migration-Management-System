@@ -6,25 +6,26 @@
 
 ## Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Project Objectives](#-project-objectives)
-- [System Architecture](#-system-architecture)
-- [Project Architecture](#-project-architecture)
-- [Database Schema](#-database-schema)
-- [Key Features](#-key-features)
-- [Setup & Installation](#-setup--installation)
-- [Configuration](#-configuration)
-- [Usage Guide](#-usage-guide)
-- [Project Structure](#-Project-structure)
-- [SQL Objects Reference](#-sql-objects-reference)
-- [Skills Learned](#-skills-learned)
-- [What Makes This Project Advanced](#-what-makes-this-project-advanced)
-- [Suggested Future Improvements](#-Suggested-Future-Improvements-)
-- [Author](#-author)
+- [Project Overview](#project-overview)
+- [Project Objectives](#project-objectives)
+- [Technical Skills](#technical-skills)
+- [System Architecture](#system-architecture)
+- [Project Architecture](#project-architecture)
+- [Project Structure](#Project-structure)
+- [Database Schema](#database-schema)
+- [Key Features](#key-features)
+- [Setup & Installation](#setup-installation)  
+- [Configuration](#configuration)
+- [Usage Guide](#usage-guide)
+- [SQL Objects Reference](#sql-objects-reference)
+- [Skills Learned](#skills-learned)
+- [What Makes This Project Advanced](#what-makes-this-project-advanced)
+- [Suggested Future Improvements](#Suggested-Future-Improvements-)
+- [Author](#author)
 
 ---
 
-## Project Overview
+# Project Overview
 
 **This project focuses on building an end-to-end Inventory Management Dashboard using:**
 
@@ -56,6 +57,20 @@ The project is designed especially for **non-technical users**, enabling them to
 - Demonstrate full-stack data application development
 
 ---
+# Technical Skills
+
+| Skills | Purpose |
+|---|---|
+| `Python` | Backend programming |
+| `MySQL` | Relational database |
+| `Streamlit` | Interactive web dashboard |
+| `Pandas` | Data manipulation and display |
+| `MySQL Connector` | Database connectivity |
+| `SQL Procedures` | Business operations |
+| `SQL Views` | Reporting and summaries |
+| `Git & GitHub` | Version control |
+
+---
 
 ## System Architecture
 
@@ -83,8 +98,20 @@ The project is designed especially for **non-technical users**, enabling them to
 | Database Views | Views | `Inventory_history` |
 | Database Procedures | Stored Procedures | `Add New-Product_id`, `Order_received` |
 
-
 ---
+## Project Structure
+
+```bash
+project-folder/
+│
+├── App.file.py                  # Streamlit frontend application
+├── functionUI.py                # Database utility functions
+├── Webapp Mysql query.sql       # SQL database scripts
+├── Interactive_Dashboard.ipynb  # Python notebook
+├── requirements.txt
+└── README.md
+
+```
 
 ## Database Schema
 
@@ -195,33 +222,20 @@ The app will open in your browser at `http://localhost:8501`.
 
 ---
 
-## Project Structure
-
-project-folder/
-│
-├── App.file.py                  # Streamlit frontend application
-├── functionUI.py                # Database utility functions
-├── Webapp Mysql query.sql       # SQL database scripts
-├── Interactive_Dashboard.ipynb  # Analysis notebook
-├── requirements.txt
-└── README.md
-
----
-
 ## SQL Objects Reference
 
 ### Stored Procedures
 
 | Procedure | Purpose |
 |---|---|
-| `AddNewProduct_id` | Inserts a new product and initializes shipment and stock entry records atomically |
-| `Order_received` | Marks a reorder as received, updates product stock, and logs shipment and stock entry within a transaction |
+| `Add New Product_id` | Inserts a new product and initializes shipment and stock entry records atomically |
+| `Order received` | Marks a reorder as received, updates product stock, and logs shipment and stock entry within a transaction |
 
 ### Views
 
 | View | Purpose |
 |---|---|
-| `Inventory_history` | Unified product timeline — combines shipment records and stock entries for any product |
+| `Inventory history` | Unified product timeline — combines shipment records and stock entries for any product |
 
 ### Key Queries
 
@@ -297,11 +311,11 @@ By completing this project, you will understand:
 
 ## Author
 
+---
 **Mohd Junaid**
 Aspiring Data Analyst | Python · SQL · Streamlit
 
 > _"The goal was to build something that feels like enterprise software but is accessible enough for anyone to use — that's what this project delivers."_
-
 
 ---
 
