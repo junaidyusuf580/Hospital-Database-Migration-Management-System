@@ -7,7 +7,7 @@
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Project Overview](#project-overview)
 - [Business Problems Addressed](#business-problems-addressed)
