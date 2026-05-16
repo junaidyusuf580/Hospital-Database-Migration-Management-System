@@ -1,7 +1,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-blue?logo=mysql&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![Type](https://img.shields.io/badge/Type-Database%20Migration-orange)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![License](https://img.shields.io/badge/Structured By-MJ-lightgrey)
 
 > A structured, secure, and scalable relational database system built to modernize hospital record-keeping — migrating from fragmented Excel files into an integrated MySQL environment.
 
