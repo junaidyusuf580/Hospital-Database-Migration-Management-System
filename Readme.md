@@ -48,27 +48,27 @@ This project showcases end-to-end database engineering — from schema design an
 
 ## Business Problems Addressed
 
-*Hospitals often face challenges while managing records manually or through spreadsheet-based systems. This project addresses the following problems:*
+_Hospitals often face challenges while managing records manually or through spreadsheet-based systems. This project addresses the following problems:_
 
-🔹 Data Redundancy
+**🔹 Data Redundancy**
 
-Duplicate records across Excel sheets lead to inconsistency and confusion.
+- Duplicate records across Excel sheets lead to inconsistency and confusion.
 
-🔹 Poor Data Integrity
+**🔹 Poor Data Integrity**
 
-Missing relationships between patients, doctors, and appointments increase errors.
+- Missing relationships between patients, doctors, and appointments increase errors.
 
-🔹 Scheduling Conflicts
+**🔹 Scheduling Conflicts**
 
-Manual appointment systems may result in double booking.
+- Manual appointment systems may result in double booking.
 
-🔹 Security Risks
+**🔹 Security Risks**
 
-Sensitive patient data requires controlled access and proper authorization.
+- Sensitive patient data requires controlled access and proper authorization.
 
-🔹 Difficult Reporting
+**🔹 Difficult Reporting**
 
-Generating monthly revenue and departmental reports manually is time-consuming.
+- Generating monthly revenue and departmental reports manually is time-consuming.
 
 ---
 
