@@ -1,9 +1,21 @@
-![MySQL](https://img.shields.io/badge/MySQL-blue?logo=mysql&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
-![Type](https://img.shields.io/badge/Type-Database%20Migration-orange)
-![License](https://img.shields.io/badge/Structured By-MJ-lightgrey)
+<div align="center">
 
-> A structured, secure, and scalable relational database system built to modernize hospital record-keeping — migrating from fragmented Excel files into an integrated MySQL environment.
+# 🏥 Hospital Database Management System
+
+<br/>
+
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Status](https://img.shields.io/badge/Status-Completed-2ECC71?style=for-the-badge&logo=checkmarx&logoColor=white)]()
+[![Type](https://img.shields.io/badge/Type-Database%20Migration-E67E22?style=for-the-badge&logo=databricks&logoColor=white)]()
+[![Structured%20By](https://img.shields.io/badge/Structured%20By-Mohd%20Junaid-95A5A6?style=for-the-badge&logo=open-source-initiative&logoColor=white)](Structured%20By)
+
+<br/>
+
+> *Transforming fragmented Excel records into a secure, scalable, and fully relational MySQL environment — end-to-end.*
+
+<br/>
+
+</div>
 
 ---
 
@@ -52,23 +64,23 @@ _Hospitals often face challenges while managing records manually or through spre
 
 **🔹 Data Redundancy**
 
-- Duplicate records across Excel sheets lead to inconsistency and confusion.
+  >Duplicate records across Excel sheets lead to inconsistency and confusion.
 
 **🔹 Poor Data Integrity**
 
-- Missing relationships between patients, doctors, and appointments increase errors.
+  >Missing relationships between patients, doctors, and appointments increase errors.
 
 **🔹 Scheduling Conflicts**
 
-- Manual appointment systems may result in double booking.
+  >Manual appointment systems may result in double booking.
 
 **🔹 Security Risks**
 
-- Sensitive patient data requires controlled access and proper authorization.
+  >Sensitive patient data requires controlled access and proper authorization.
 
 **🔹 Difficult Reporting**
 
-- Generating monthly revenue and departmental reports manually is time-consuming.
+  >Generating monthly revenue and departmental reports manually is time-consuming.
 
 ---
 
@@ -353,12 +365,29 @@ _Possible future enhancements include:_
 
 ---
 
-## Author
->Mohd Junaid
-_Aspiring Data Analyst | SQL & Database Enthusiast._
+<div align="left">
+
+## 👤 Author
+
+**Mohd Junaid**
+
+*Built as part of a hospital data modernization initiative to replace manual Excel-based records with a secure, scalable relational database system.*
+
+<br/>
 
 ---
 
 *If you found this project useful, feel free to star the repository.*
+
+![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-E74C3C?style=for-the-badge)
+![MySQL](https://img.shields.io/badge/Powered%20by-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
 😊😊😊
+
+</div>
+
+
+
+
+
 
