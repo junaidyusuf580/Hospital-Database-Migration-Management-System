@@ -80,7 +80,7 @@ Generating monthly revenue and departmental reports manually is time-consuming.
 | 2 | Introduce unique identifiers (PKs) for all tables | Done |
 | 3 | Maintain data integrity using primary and foreign keys | Done |
 | 4 | Validate data entries with CHECK constraints | Done |
-| 5 | Prevent double-booking with a scheduling trigger | Done |
+| 5 | Prevent double-booking with a scheduling triggers | Done |
 | 6 | Implement role-based patient data access via stored procedures | Done |
 | 7 | Enable monthly departmental revenue reporting | Done |
 | 8 | Convert unstructured Excel hospital data into a relational database | Done |
