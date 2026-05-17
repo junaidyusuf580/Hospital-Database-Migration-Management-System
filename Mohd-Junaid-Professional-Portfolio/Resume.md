@@ -128,3 +128,4 @@ Worked as an Associate handling end-to-end Record-to-Report (R2R) activities, an
 [![Connect on LinkedIn](https://img.shields.io/badge/🔗_Connect-LinkedIn-0077B5?style=for-the-badge)](https://linkedin.com/in/mohd-junaid-747635159)
 
 </div>
+
